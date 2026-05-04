@@ -1,0 +1,26 @@
+## Matrix Rain — component dependency manifest
+## Place this file at:  main/idf_component.yml
+
+dependencies:
+  idf: ">=5.3.0"
+
+  # Tanmatsu Board Support Package
+  # Provides: display init, backlight control, keyboard events
+  nicolaielectronics/tanmatsu_bsp:
+    version: ">=1.0.0"
+
+  # Tanmatsu coprocessor driver (keyboard matrix, LEDs, power)
+  nicolaielectronics/tanmatsu_coprocessor:
+    version: ">=0.5.0"
+
+  # MIPI DSI display abstraction layer
+  nicolaielectronics/mipi_dsi_abstraction:
+    version: ">=1.0.0"
+
+  # Espressif LVGL port (esp_lvgl_port)
+  espressif/esp_lvgl_port:
+    version: ">=2.3.0"
+
+  # LVGL itself
+  lvgl/lvgl:
+    version: ">=9.0.0"

@@ -1,0 +1,38 @@
+# ── Tanmatsu / ESP32-P4 sdkconfig defaults for Matrix Rain ──────
+
+# Target
+CONFIG_IDF_TARGET="esp32p4"
+
+# Flash & PSRAM
+CONFIG_ESPTOOLPY_FLASHSIZE_16MB=y
+CONFIG_SPIRAM=y
+CONFIG_SPIRAM_MODE_OCT=y
+CONFIG_SPIRAM_SPEED_80M=y
+
+# Place large buffers in PSRAM automatically
+CONFIG_SPIRAM_MALLOC_ALWAYSINTERNAL=16384
+
+# FreeRTOS tick rate (1 kHz for smooth animation)
+CONFIG_FREERTOS_HZ=1000
+
+# ── LVGL configuration ───────────────────────────────────────────
+# Colour depth must match the MIPI DSI panel (16-bit RGB565)
+CONFIG_LV_COLOR_DEPTH_16=y
+
+# Enable the compact monospace font used for the glyph cells
+CONFIG_LV_FONT_UNSCII_8=y
+
+# Canvas draw support
+CONFIG_LV_USE_CANVAS=y
+
+# Label / text draw support
+CONFIG_LV_USE_LABEL=y
+
+# Use DMA-capable memory for LVGL draw buffers
+CONFIG_LV_ATTRIBUTE_MEM_ALIGN_SIZE=64
+
+# ── Logging ──────────────────────────────────────────────────────
+CONFIG_LOG_DEFAULT_LEVEL_INFO=y
+
+# ── Stack / heap ─────────────────────────────────────────────────
+CONFIG_ESP_MAIN_TASK_STACK_SIZE=8192
