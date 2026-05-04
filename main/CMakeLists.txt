@@ -1,17 +1,9 @@
-idf_component_register(
-    SRCS
-        "main.c"
-    INCLUDE_DIRS
-        "."
-    REQUIRES
-        # Tanmatsu Board Support Package (display + input)
-        tanmatsu_bsp
-        # LVGL graphics library via BSP interface
-        esp_lvgl_port
-        # FreeRTOS
-        freertos
-        # Logging
-        log
-        # Random number generation
-        esp_hw_support
-)
+cmake_minimum_required(VERSION 3.16)
+
+# Set the target chip — Tanmatsu uses the ESP32-P4
+set(IDF_TARGET "esp32p4")
+
+# Pull in the ESP-IDF CMake build system
+include($ENV{IDF_PATH}/tools/cmake/project.cmake)
+
+project(matrix_rain)
